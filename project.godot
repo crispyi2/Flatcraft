@@ -11,11 +11,13 @@ config_version=4
 [application]
 
 config/name="Flatcraft"
-run/main_scene="res://scenes/TitleScreen.tscn"
+run/main_scene="res://scenes/Launcher.tscn"
 config/icon="res://icon.png"
 
 [display]
 
+window/size/width=1440
+window/size/height=790
 window/size/borderless=true
 
 [global]
