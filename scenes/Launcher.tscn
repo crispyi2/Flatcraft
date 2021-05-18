@@ -16,19 +16,19 @@ font_data = SubResource( 1 )
 size = 20
 font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFontData" id=6]
-font_path = "res://fonts/1_Minecraft-Regular.otf"
-
-[sub_resource type="DynamicFont" id=7]
-size = 50
-font_data = SubResource( 6 )
-
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://fonts/1_Minecraft-Regular.otf"
 
 [sub_resource type="DynamicFont" id=5]
-size = 40
+size = 50
 font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://fonts/1_Minecraft-Regular.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = SubResource( 6 )
 
 [node name="Launcher" type="Control"]
 anchor_right = 1.0
@@ -82,6 +82,9 @@ margin_top = 52.0
 margin_right = 496.0
 margin_bottom = 792.0
 color = Color( 0.294118, 0.294118, 0.294118, 0.498039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button2" type="Button" parent="Background"]
 margin_left = 1013.0
@@ -98,8 +101,11 @@ margin_left = 142.691
 margin_top = 25.0
 margin_right = 247.691
 margin_bottom = 81.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TitleBar" type="Control" parent="."]
 margin_right = 1440.0
@@ -157,7 +163,7 @@ __meta__ = {
 [node name="v0_0_1" type="CheckBox" parent="VBoxContainer"]
 margin_right = 218.0
 margin_bottom = 48.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "v0.0.1"
 
 [connection signal="gui_input" from="Background/Button2" to="Background/Button2" method="_on_Button2_gui_input"]
