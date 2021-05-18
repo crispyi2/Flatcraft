@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/TitleBar.gd" type="Script" id=1]
-[ext_resource path="res://textures/window_assets/window-+.png" type="Texture" id=2]
 [ext_resource path="res://textures/window_assets/window-x.png" type="Texture" id=3]
+[ext_resource path="res://textures/window_assets/window--.png" type="Texture" id=4]
 
 [node name="Launcher" type="Control"]
 anchor_right = 1.0
@@ -21,33 +21,47 @@ __meta__ = {
 
 [node name="TitleBar" type="Control" parent="."]
 margin_right = 1440.0
-margin_bottom = 85.0
+margin_bottom = 57.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="TitleBar"]
+margin_right = 1440.0
+margin_bottom = 57.0
+mouse_filter = 1
+color = Color( 0.294118, 0.294118, 0.294118, 1 )
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Close" type="Button" parent="TitleBar"]
 margin_left = 1378.0
-margin_top = 10.0
+margin_top = 5.0
 margin_right = 1431.0
-margin_bottom = 57.0
+margin_bottom = 52.0
 icon = ExtResource( 3 )
 flat = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Maximize" type="Button" parent="TitleBar"]
-margin_left = 1320.0
-margin_top = 10.0
-margin_right = 1373.0
-margin_bottom = 57.0
-icon = ExtResource( 2 )
+[node name="Minimize" type="Button" parent="TitleBar"]
+margin_left = 1314.51
+margin_top = 5.0
+margin_right = 1367.51
+margin_bottom = 52.0
+icon = ExtResource( 4 )
 flat = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [connection signal="gui_input" from="TitleBar" to="TitleBar" method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="TitleBar/Close" to="TitleBar" method="_on_Close_pressed"]
+[connection signal="pressed" from="TitleBar/Minimize" to="TitleBar" method="_on_Minimize_pressed"]

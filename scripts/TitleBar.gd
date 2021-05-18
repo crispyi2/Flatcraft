@@ -18,3 +18,7 @@ func _process(_delta):
 
 func _on_Close_pressed():
 	get_tree().quit()
+
+
+func _on_Minimize_pressed():
+	OS.set_window_minimized(true)
