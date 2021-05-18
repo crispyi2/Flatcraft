@@ -1,0 +1,14 @@
+{
+    "ver_list": [
+        {
+            "ver_codename": "alpha",
+            "ver_number": "v0.0.1",
+            "folder": "./versions/v0.0.1",
+            "default_node_config": {
+                "default_node_in_ver_root": false,
+                "default_node_folder": "./scenes",
+                "default_node_filename": "title_screen.tscn"
+            }
+        }
+    ]
+}
