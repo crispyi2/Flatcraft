@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/TitleBar.gd" type="Script" id=1]
 [ext_resource path="res://textures/window_assets/window-x.png" type="Texture" id=3]
 [ext_resource path="res://textures/window_assets/window--.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/1_Minecraft-Regular.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = SubResource( 1 )
 
 [node name="Launcher" type="Control"]
 anchor_right = 1.0
@@ -18,6 +29,44 @@ margin_bottom = 792.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="Background"]
+margin_left = 539.856
+margin_top = 667.672
+margin_right = 1000.86
+margin_bottom = 763.672
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Update Flatcraft" type="Label" parent="Background/Button"]
+margin_right = 310.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Update Flatcraft"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="(Unfinished)" type="Label" parent="Background/Button"]
+margin_left = 263.772
+margin_right = 472.772
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 3 )
+text = "(unfinished)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_top = 52.0
+margin_right = 496.0
+margin_bottom = 792.0
+color = Color( 0.294118, 0.294118, 0.294118, 0.498039 )
 
 [node name="TitleBar" type="Control" parent="."]
 margin_right = 1440.0
