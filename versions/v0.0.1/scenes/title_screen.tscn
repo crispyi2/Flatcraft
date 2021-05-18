@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/window/TitleBar.gd" type="Script" id=1]
 [ext_resource path="res://textures/window_assets/window-x.png" type="Texture" id=2]
 [ext_resource path="res://textures/window_assets/window--.png" type="Texture" id=3]
+[ext_resource path="res://versions/v0.0.1/scripts/settings_menu.gd" type="Script" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -54,6 +56,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel" type="Panel" parent="."]
+margin_top = 57.0
+margin_right = 1440.0
+margin_bottom = 788.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="."]
+margin_left = 486.33
+margin_top = 320.02
+margin_right = 969.33
+margin_bottom = 393.02
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Button" parent="."]
+margin_left = 37.4681
+margin_top = 105.821
+margin_right = 117.468
+margin_bottom = 178.821
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings_menu" type="PopupMenu" parent="."]
+visible = true
+margin_top = 57.0
+margin_right = 1440.0
+margin_bottom = 788.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings_close_button" type="Button" parent="settings_menu"]
+margin_left = 1314.51
+margin_top = 48.8213
+margin_right = 1393.51
+margin_bottom = 121.821
+
 [connection signal="gui_input" from="TitleBar" to="TitleBar" method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="TitleBar/Close" to="TitleBar" method="_on_Close_pressed"]
 [connection signal="pressed" from="TitleBar/Minimize" to="TitleBar" method="_on_Minimize_pressed"]
+[connection signal="about_to_show" from="settings_menu" to="TitleBar" method="_on_settings_menu_about_to_show"]
+[connection signal="popup_hide" from="settings_menu" to="TitleBar" method="_on_settings_menu_popup_hide"]

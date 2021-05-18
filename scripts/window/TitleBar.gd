@@ -22,3 +22,11 @@ func _on_Close_pressed():
 
 func _on_Minimize_pressed():
 	OS.set_window_minimized(true)
+
+
+func _on_settings_menu_about_to_show():
+	pass # Replace with function body.
+
+
+func _on_settings_menu_popup_hide():
+	pass # Replace with function body.
